@@ -36,28 +36,28 @@ namespace ArenaManager.GameStateNamespace
         {
             //get all level 1 monsters
             Console.WriteLine("1st Query:");
-            List<Monster> FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 1);
+            var FilteredList = GameMonsters.Where(x => x.Level == 1);
+            Console.Clear();
             foreach(Monster m in FilteredList)
             {
-                Console.Clear();
                 Console.WriteLine(m.Name);
             }
             Console.ReadKey();
             //get all level 2 monsters
             Console.WriteLine("2nd Query:");
-            FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 2);
+            FilteredList = GameMonsters.Where(x => x.Level == 2);
+            Console.Clear();
             foreach (Monster m in FilteredList)
             {
-                Console.Clear();
                 Console.WriteLine(m.Name);
             }
             Console.ReadKey();
             //get all level 1 monsters in Grass
             Console.WriteLine("3rd Query:");
-            FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 1&&x.Environment.ToLower()=="grass");
+            FilteredList = GameMonsters.Where(x => x.Level == 1&&x.Environment.ToLower()=="grass");
+            Console.Clear();
             foreach (Monster m in FilteredList)
             {
-                Console.Clear();
                 Console.WriteLine(m.Name);
             }
             Console.ReadKey();

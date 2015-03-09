@@ -66,7 +66,7 @@
     <AttackText>The Gray Wolf lunges at you</AttackText>
     <MissText>You move nimbly out of the way</MissText>
     <HitText>It's teeth sink in to your flesh and it prepares another attack</HitText>
-      <Environment>Forest</Environment>
+    <Environment>Forest</Environment>
     <Level>1</Level>
     <Gold>5</Gold>
   </Monster>

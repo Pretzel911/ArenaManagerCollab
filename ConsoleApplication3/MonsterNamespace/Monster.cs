@@ -10,7 +10,7 @@ namespace ArenaManager.MonsterNamespace
     [XmlRoot("Monsters")]
     public class MonstersList
     {
-        [XmlElement("Monsters")]
+        [XmlElement("Monster")]
         public List<Monster> Monsters { get; set; }
     }
     public class Monster
@@ -18,14 +18,14 @@ namespace ArenaManager.MonsterNamespace
         public string Name { get; set; }
         public int Health { get; set; }
         public int Strength { get; set; }
-        public int Agility { get; set; }
         public int Defense { get; set; }
+        public int Agility { get; set; }
         public int Experience { get; set; }
         public string AttackText { get; set; }
-        public string HitText { get; set; }
         public string MissText { get; set; }
-        public int Gold { get; set; }
+        public string HitText { get; set; }
         public string Environment { get; set; }
         public int Level { get; set; }
+        public int Gold { get; set; }
     }
 }
