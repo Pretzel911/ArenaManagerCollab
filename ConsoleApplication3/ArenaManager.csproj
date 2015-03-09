@@ -50,6 +50,7 @@
     <Compile Include="ItemNamespace\Item.cs" />
     <Compile Include="ItemNamespace\Weapon.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="MapNamespace\Maps.cs" />
     <Compile Include="MonsterNamespace\Monster.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="GameStateNamespace\Game.cs" />
@@ -68,7 +69,7 @@
     <Content Include="Data\ItemData\Weapon.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\MapData\Map.xml" />
+    <Content Include="Data\MapData\Maps.xml" />
     <Content Include="Data\MonsterData\Monster.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

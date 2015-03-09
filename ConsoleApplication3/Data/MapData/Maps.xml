@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Map>
+<Maps>
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>0</MapLocationY>
@@ -32,4 +32,4 @@
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
   </MapItem>
-</Map>
+</Maps>

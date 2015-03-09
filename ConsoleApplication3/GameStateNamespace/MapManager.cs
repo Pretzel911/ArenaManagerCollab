@@ -7,23 +7,29 @@ using System.IO;
 using ArenaManager.ItemNamespace;
 using System.Xml.Serialization;
 using System.Xml;
-using ArenaManager.PlayerNamespace;
+using ArenaManager.MapNamespace;
 
 namespace ArenaManager.GameStateNamespace
 {
     class MapManager
     {
         /****Properties****/
-        public List<Map> MapLocations;
+        public List<Maps> MapLocations;
         /****Initialize****/
         public MapManager()
         {
-            MapLocations = new List<Map>;
+            MapLocations = new List<Maps>();
             LoadMapLocations();
         }
         private void LoadMapLocations()
         {
-            MapLocations.AddRange((()))
+            MapLocations.AddRange(((MapItemList)LoadXML(@"Data\MapData\Maps.xml", typeof(MapItemList))).MapList);
+        }
+        private object LoadXML(string path, Type type)
+        {
+            XmlSerializer XSer = new XmlSerializer(type);
+            XmlReader reader = XmlReader.Create(path);
+            return XSer.Deserialize(reader);
         }
     }
 }
