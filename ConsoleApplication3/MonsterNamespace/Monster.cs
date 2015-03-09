@@ -7,10 +7,10 @@ using System.Xml.Serialization;
 
 namespace ArenaManager.MonsterNamespace
 {
-    [XmlRoot("HealthRestoreItems")]
+    [XmlRoot("Monsters")]
     public class MonstersList
     {
-        [XmlElement("HealthRestoreItem")]
+        [XmlElement("Monsters")]
         public List<Monster> Monsters { get; set; }
     }
     public class Monster
