@@ -126,4 +126,18 @@
     <Level>1</Level>
     <Gold>8</Gold>
   </Monster>
+  <Monster>
+    <Name>Bandit</Name>
+    <Health>20</Health>
+    <Strength>8</Strength>
+    <Defense>6</Defense>
+    <Agility>15</Agility>
+    <Experience>27</Experience>
+    <AttackText>Bandit lunges at you.</AttackText>
+    <MissText>But you dodge!</MissText>
+    <HitText>He gashes your body!</HitText>
+    <Environment>Forest</Environment>
+    <Level>2</Level>
+    <Gold>40</Gold>
+  </Monster>
 </Monsters>
