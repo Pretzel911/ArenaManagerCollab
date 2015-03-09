@@ -15,17 +15,115 @@
     <Gold>1</Gold>
   </Monster>
   <Monster>
-    <Name>Slime2</Name>
-    <Health>2</Health>
-    <Strength>1</Strength>
+    <Name>Angry Rabbit</Name>
+    <Health>3</Health>
+    <Strength>4</Strength>
     <Defense>1</Defense>
-    <Agility>1</Agility>
-    <Experience>1</Experience>
-    <AttackText>The Slime rolls towards you!</AttackText>
-    <MissText>...and keeps on rolling right by you...</MissText>
-    <HitText>Slams squishily in to your kneecaps!</HitText>
+    <Agility>2</Agility>
+    <Experience>2</Experience>
+    <AttackText>The Rabbit bites at you ankles</AttackText>
+    <MissText>You manage to dance out of the way</MissText>
+    <HitText>He lands a solid blow and gnaws at you.</HitText>
     <Environment>Grass</Environment>
     <Level>1</Level>
-    <Gold>1</Gold>
+    <Gold>2</Gold>
+  </Monster>
+  <Monster>
+    <Name>Horde Of Rats</Name>
+    <Health>7</Health>
+    <Strength>2</Strength>
+    <Defense>1</Defense>
+    <Agility>5</Agility>
+    <Experience>4</Experience>
+    <AttackText>The rat hordes climbs on you and begins gnawing.</AttackText>
+    <MissText>They just can't seem to sink their teeth into you</MissText>
+    <HitText>They went for your eyes!!!!</HitText>
+    <Environment>Sewer</Environment>
+    <Level>1</Level>
+    <Gold>3</Gold>
+  </Monster>
+  <Monster>
+    <Name>Dire Rat</Name>
+    <Health>9</Health>
+    <Strength>8</Strength>
+    <Defense>2</Defense>
+    <Agility>3</Agility>
+    <Experience>4</Experience>
+    <AttackText>The huge rat charges at you</AttackText>
+    <MissText>it misses</MissText>
+    <HitText>It's fangs sink deep in to your chest</HitText>
+    <Environment>Sewer</Environment>
+    <Level>1</Level>
+    <Gold>3</Gold>
+  </Monster>
+  <Monster>
+    <Name>Gray Wolf</Name>
+    <Health>9</Health>
+    <Strength>4</Strength>
+    <Defense>2</Defense>
+    <Agility>4</Agility>
+    <Experience>5</Experience>
+    <AttackText>The Gray Wolf lunges at you</AttackText>
+    <MissText>You move nimbly out of the way</MissText>
+    <HitText>It's teeth sink in to your flesh and it prepares another attack</HitText>
+      <Environment>Forest</Environment>
+    <Level>1</Level>
+    <Gold>5</Gold>
+  </Monster>
+  <Monster>
+    <Name>Rabid Deer</Name>
+    <Health>5</Health>
+    <Strength>2</Strength>
+    <Defense>2</Defense>
+    <Agility>6</Agility>
+    <Experience>4</Experience>
+    <AttackText>The deer kicks at you with its hind legs</AttackText>
+    <MissText>It narrowly misses your head</MissText>
+    <HitText>It lands a solid blow!</HitText>
+    <Environment>Forest</Environment>
+    <Level>1</Level>
+    <Gold>4</Gold>
+  </Monster>
+  <Monster>
+    <Name>Armored Beetle</Name>
+    <Health>10</Health>
+    <Strength>2</Strength>
+    <Defense>8</Defense>
+    <Agility>1</Agility>
+    <Experience>6</Experience>
+    <AttackText>The beetle tries to get its pincers around you.</AttackText>
+    <MissText>but it can't quite achieve it's goal</MissText>
+    <HitText>It's teeth sink in to your flesh and it prepares another attack</HitText>
+    <Environment>Desert</Environment>
+    <Level>1</Level>
+    <Gold>5</Gold>
+  </Monster>
+  <Monster>
+    <Name>Sand Worm</Name>
+    <Health>8</Health>
+    <Strength>4</Strength>
+    <Defense>3</Defense>
+    <Agility>2</Agility>
+    <Experience>5</Experience>
+    <AttackText>The worm dives under the sand and heads towards you.</AttackText>
+    <MissText>Well maybe it can't see too well under ground</MissText>
+    <HitText>It bursts from the ground and slams directly in to you</HitText>
+    <Environment>Desert</Environment>
+    <Level>1</Level>
+    <Gold>5</Gold>
+  </Monster>
+  <Monster>
+    <Name>King Slime</Name>
+    <Health>15</Health>
+    <Strength>3</Strength>
+    <Defense>3</Defense>
+    <Agility>2</Agility>
+    <Experience>7</Experience>
+    <AttackText>The king slime rolls at you</AttackText>
+    <MissText>...and rolls on by...</MissText>
+    <HitText>Its body burns like acid as he bounces off you.</HitText>
+    <Environment>Grass</Environment>
+    <Level>1</Level>
+    <Gold>8</Gold>
   </Monster>
 </Monsters>
