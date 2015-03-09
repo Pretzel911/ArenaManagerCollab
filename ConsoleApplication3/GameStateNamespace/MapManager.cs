@@ -13,5 +13,17 @@ namespace ArenaManager.GameStateNamespace
 {
     class MapManager
     {
+        /****Properties****/
+        public List<Map> MapLocations;
+        /****Initialize****/
+        public MapManager()
+        {
+            MapLocations = new List<Map>;
+            LoadMapLocations();
+        }
+        private void LoadMapLocations()
+        {
+            MapLocations.AddRange((()))
+        }
     }
 }

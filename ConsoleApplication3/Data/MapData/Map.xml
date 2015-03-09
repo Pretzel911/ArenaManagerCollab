@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Map>
+  <MapItem>
+    <MapLocationX>0</MapLocationX>
+    <MapLocationY>0</MapLocationY>
+    <LocationDescription>You are inside the city of Havenshire.\nTall buidlings are all around you,\nincluding the Battle Arena where\nwarriors go to hone their skills</LocationDescription>
+    <MapEnvironment>City</MapEnvironment>
+    <AreaMonsterLevel>0</AreaMonsterLevel>
+    <WhichMenu>99</WhichMenu>
+  </MapItem>
+  <MapItem>
+    <MapLocationX>1</MapLocationX>
+    <MapLocationY>0</MapLocationY>
+    <LocationDescription>You find yourself in the grasslands to the east of Havenshire</LocationDescription>
+    <MapEnvironment>Grass</MapEnvironment>
+    <AreaMonsterLevel>1</AreaMonsterLevel>
+    <WhichMenu>1</WhichMenu>
+  </MapItem>
+  <MapItem>
+    <MapLocationX>0</MapLocationX>
+    <MapLocationY>1</MapLocationY>
+    <LocationDescription>The forest North of Havenshire is called Elkwood\nand here you are</LocationDescription>
+    <MapEnvironment>Forest</MapEnvironment>
+    <AreaMonsterLevel>1</AreaMonsterLevel>
+    <WhichMenu>1</WhichMenu>
+  </MapItem>
+  <MapItem>
+    <MapLocationX>1</MapLocationX>
+    <MapLocationY>1</MapLocationY>
+    <LocationDescription>Here you find a river, it looks like a pipe from the\nHavenshire sewers leads here, who knows\n what has come out of there\nWest is the Elkwood\nSouth is the Havenshire Grassland</LocationDescription>
+    <MapEnvironment>Sewer</MapEnvironment>
+    <AreaMonsterLevel>1</AreaMonsterLevel>
+    <WhichMenu>1</WhichMenu>
+  </MapItem>
+</Map>
