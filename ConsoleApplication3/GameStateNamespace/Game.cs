@@ -14,6 +14,7 @@ namespace ArenaManager.GameStateNamespace
         Random roll;
         Map myMap;
         ItemManager myItemManager;
+        MonsterManager myMonsterManager;
 
         public Game()
         {
@@ -28,6 +29,7 @@ namespace ArenaManager.GameStateNamespace
             string MapStart = "start";
             myMap = new Map(MapStart);
             myItemManager = new ItemManager();
+            myMonsterManager = new MonsterManager();
             ClearMenuWithMap();
 
             //TODO: Remove This

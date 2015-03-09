@@ -14,4 +14,18 @@
     <Level>1</Level>
     <Gold>1</Gold>
   </Monster>
+  <Monster>
+    <Name>Slime2</Name>
+    <Health>2</Health>
+    <Strength>1</Strength>
+    <Defense>1</Defense>
+    <Agility>1</Agility>
+    <Experience>1</Experience>
+    <AttackText>The Slime rolls towards you!</AttackText>
+    <MissText>...and keeps on rolling right by you...</MissText>
+    <HitText>Slams squishily in to your kneecaps!</HitText>
+    <Environment>Grass</Environment>
+    <Level>1</Level>
+    <Gold>1</Gold>
+  </Monster>
 </Monsters>

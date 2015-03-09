@@ -13,7 +13,7 @@ namespace ArenaManager.MonsterNamespace
         [XmlElement("HealthRestoreItem")]
         public List<Monster> Monsters { get; set; }
     }
-    class Monster
+    public class Monster
     {
         public string Name { get; set; }
         public int Health { get; set; }

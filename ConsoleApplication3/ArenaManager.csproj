@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameStateNamespace\ItemManager.cs" />
+    <Compile Include="GameStateNamespace\MonsterManager.cs" />
     <Compile Include="ItemNamespace\HealthRestoreItem.cs" />
     <Compile Include="ItemNamespace\IConsumable.cs" />
     <Compile Include="ItemNamespace\IEquipabble.cs" />
@@ -66,7 +67,9 @@
     <Content Include="Data\ItemData\Weapon.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\MonsterData\Monster.xml" />
+    <Content Include="Data\MonsterData\Monster.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
