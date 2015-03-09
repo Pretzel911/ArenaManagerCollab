@@ -221,39 +221,38 @@ namespace ArenaManager.GameStateNamespace
                         {
                             missed = true;
                         }
-                        if (missed != true)
-                        {
-                            damageRoll = roll.Next(1, myMonster.Strength + 1);
-                            defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
-                            damage = damageRoll - defenseRoll;
-                            if (damage <= 0) { damage = 1; }
-                            myPlayer.PlayerCurrentHealth = myPlayer.PlayerCurrentHealth - (damage);
-                            Console.WriteLine(myMonster.HitText + " {0} Damage!", damage);
-                        }
-                        else 
-                        { 
-                            Console.WriteLine(myMonster.MissText); missed = false; 
-                        }
+                    }
+                    if (missed != true)
+                    {
+                        damageRoll = roll.Next(1, myMonster.Strength + 1);
+                        defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
+                        damage = damageRoll - defenseRoll;
+                        if (damage <= 0) { damage = 1; }
+                        myPlayer.PlayerCurrentHealth = myPlayer.PlayerCurrentHealth - (damage);
+                        Console.WriteLine(myMonster.HitText + " {0} Damage!", damage);
+                    }
+                    else 
+                    { 
+                        Console.WriteLine(myMonster.MissText); missed = false; 
+                    }
+                    Console.ReadKey();
+                    if (MonsterHealth <= 0)
+                    {
+                        myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
+                        myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
+                        Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
+                        Console.WriteLine("You recieved {0} gold", myMonster.Gold);
                         Console.ReadKey();
-                        if (MonsterHealth <= 0)
-                        {
-                            myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
-                            myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
-                            Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
-                            Console.WriteLine("You recieved {0} gold", myMonster.Gold);
-                            Console.ReadKey();
-                            ClearMenuWithMap();
-                        }
-                        if (myPlayer.PlayerCurrentHealth <= 0)
-                        {
-                            Console.WriteLine("The monster has defeated you!");
-                            Console.ReadKey();
-                            Environment.Exit(1);
+                        ClearMenuWithMap();
+                    }
+                    if (myPlayer.PlayerCurrentHealth <= 0)
+                    {
+                        Console.WriteLine("The monster has defeated you!");
+                        Console.ReadKey();
+                        Environment.Exit(1);
 
-                        }
                     }
                 }
-                Console.ReadKey();
             }
         }
         private void DisplayPouch()
