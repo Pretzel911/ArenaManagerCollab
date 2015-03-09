@@ -202,7 +202,7 @@ namespace ArenaManager.GameStateNamespace
                     if (missed != true)
                     {
                         damageRoll = roll.Next(1, myPlayer.PlayerStrength + 1);
-                        defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
+                        defenseRoll = roll.Next(0, myMonster.MonsterDefense);
                         damage = damageRoll - defenseRoll;
                         if (damage <= 0) { damage = 1; }
                         myMonster.MonsterHealth = myMonster.MonsterHealth - (damage);
@@ -222,7 +222,7 @@ namespace ArenaManager.GameStateNamespace
                         if (missed != true)
                         {
                             damageRoll = roll.Next(1, myMonster.MonsterStrength + 1);
-                            defenseRoll = roll.Next(0, myMonster.MonsterDefense);
+                            defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
                             damage = damageRoll - defenseRoll;
                             if (damage <= 0) { damage = 1; }
                             myPlayer.PlayerCurrentHealth = myPlayer.PlayerCurrentHealth - (damage);
