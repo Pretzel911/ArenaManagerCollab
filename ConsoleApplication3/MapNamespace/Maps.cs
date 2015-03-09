@@ -11,7 +11,7 @@ namespace ArenaManager.MapNamespace
     [XmlRoot("Maps")]
     public class MapItemList
     {
-        [XmlElement("MapItem")]
+        [XmlElement("Maps")]
         public List<Maps> MapList { get; set; }
     }
     public class Maps

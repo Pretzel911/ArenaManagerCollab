@@ -13,9 +13,10 @@ namespace ArenaManager.GameStateNamespace
 
         Player myPlayer;
         Random roll;
-        Map myMap;
+        MapManager myMapManager;
         ItemManager myItemManager;
         MonsterManager myMonsterManager;
+        MapNamespace.Maps myMap;
 
         public Game()
         {
@@ -27,10 +28,11 @@ namespace ArenaManager.GameStateNamespace
         {
             myPlayer = new Player();
             roll = new Random();
-            string MapStart = "start";
-            myMap = new Map(MapStart);
+            //string MapStart = "start";
+            myMapManager = new MapManager();
             myItemManager = new ItemManager();
             myMonsterManager = new MonsterManager();
+            myMap = myMapManager.MoveMap(0, 0);
             ClearMenuWithMap();
             //TODO: Remove This
             myItemManager.AddItemToPlayerPouch(myPlayer, "HR1");
@@ -38,47 +40,92 @@ namespace ArenaManager.GameStateNamespace
         }
         public void StartGame()
         {
-            #region Menu99
-            if (myMap.WhichMenu == 99)
-            {
-                int monsterLevel = 1;
-                string input = "";
-                string[] inputArray;
-                Console.WriteLine("Remember to type help if you are stuck");
+            int monsterLevel = 1;
+            string input = "";
+            string[] inputArray;
+            Console.WriteLine("Remember to type help if you are stuck");
 
                 while (input != "exit")
                 {
-                    Console.WriteLine("\n\n");
-                    inputArray = Console.ReadLine().ToLower().Split(' ');
-                    input = inputArray[0];
-                    //input = input.ToLower(); See Above, classy!
-                    if (input == "help")
-                        HelpMenu();
-                    if (input == "upmonsterlevel")
-                        UpMonsterLevelMenu(monsterLevel);
-                    if (input == "spendskill")
-                        SpendSkillsMenu();
-                    if (input == "arena")
-                        BattleHandlerMenu(monsterLevel);
-                    if (input == "inn")
-                        StayAtInn();
-                    if (input == "clear")
-                        ClearMenuWithMap();
-                    if (input == "levelup")
-                        LevelUpMenu();
-                    if (input == "givemexp")
-                        XpCheat();
-                    if (input == "displaypouch")
-                        DisplayPouch();
-                    if (input == "useitem")
-                        UseItem(inputArray[1]);
+                    #region Menu99
+                    if (myMap.WhichMenu == 99)
+                    {
+                        Console.WriteLine("\n\n");
+                        inputArray = Console.ReadLine().ToLower().Split(' ');
+                        input = inputArray[0];
+                        //input = input.ToLower(); See Above, classy!
+                        if (input == "help")
+                            HelpMenu();
+                        else if (input == "upmonsterlevel")
+                            UpMonsterLevelMenu(monsterLevel);
+                        else if (input == "spendskill")
+                            SpendSkillsMenu();
+                        else if (input == "arena")
+                            BattleHandlerMenu(monsterLevel);
+                        else if (input == "inn")
+                            StayAtInn();
+                        else if (input == "clear")
+                            ClearMenuWithMap();
+                        else if (input == "levelup")
+                            LevelUpMenu();
+                        else if (input == "givemexp")
+                            XpCheat();
+                        else if (input == "displaypouch")
+                            DisplayPouch();
+                        else if (input == "useitem")
+                            UseItem(inputArray[1]);
+                        else if (input == "move")
+                            MoveMapRegion();
+                    }
+                    #region Menu1
+                    else if (myMap.WhichMenu == 1)
+                    {
+                        Console.WriteLine("\n\n");
+                        inputArray = Console.ReadLine().ToLower().Split(' ');
+                        input = inputArray[0];
+                        if (input == "help")
+                            HelpMenu();
+                        else if (input == "spendskills")
+                            SpendSkillsMenu();
+                        else if (input == "clear")
+                            ClearMenuWithMap();
+                        else if (input == "displaypuch")
+                            DisplayPouch();
+                        else if (input == "useitem")
+                            UseItem(inputArray[1]);
+                        else if (input == "move")
+                            MoveMapRegion();
+                    }
+                    #endregion
                 }
-            }
             #endregion
         }
 
 
         #region Menu Items
+        public void MoveMapRegion()
+        {
+            string movementInput;
+            Console.WriteLine("Which direction? (n/s/e/w");
+            movementInput = Console.ReadLine();
+            if (movementInput == "n")
+            {
+                myMap.MapLocationY += 1;
+                myMap = myMapManager.MoveMap(myMap.MapLocationX, myMap.MapLocationY);
+            }
+            else if (movementInput == "n")
+            {
+
+            }
+            else if (movementInput == "n")
+            {
+
+            }
+            else if (movementInput == "n")
+            {
+
+            }
+        }
         private void ClearMenuWithMap()
         {
             Console.Clear();
@@ -140,7 +187,7 @@ namespace ArenaManager.GameStateNamespace
                 }
                 else { Console.WriteLine("You dont have enough money, why don't you go camping!"); }
             }
-            else ;
+            else { }
             ClearMenuWithMap();
         }
         private void LevelUpMenu()

@@ -31,5 +31,10 @@ namespace ArenaManager.GameStateNamespace
             XmlReader reader = XmlReader.Create(path);
             return XSer.Deserialize(reader);
         }
+        public Maps MoveMap(int xLocation, int yLocation)
+        {
+            var FilteredList = MapLocations.Where(x => x.MapLocationX == xLocation && x.MapLocationY == yLocation);
+            return FilteredList.ToList()[0];
+        }
     }
 }
