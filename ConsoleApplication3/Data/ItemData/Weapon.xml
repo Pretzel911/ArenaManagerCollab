@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Weapons>
+  <Weapon>
+    <ItemID>W1</ItemID>
+    <Name>Butter Knife</Name>
+    <Description>+1 Attack. Somethings better than nothing!</Description>
+    <StrengthModifier>1</StrengthModifier>
+  </Weapon>
+  <Weapon>
+    <ItemID>W2</ItemID>
+    <Name>Dagger</Name>
+    <Description>+2 Attack. What's the difference between a dagger and a sword?</Description>
+    <StrengthModifier>2</StrengthModifier>
+  </Weapon>
+  <Weapon>
+    <ItemID>W3</ItemID>
+    <Name>Sword</Name>
+    <Description>+4 Attack. Kill your enemies with ease.</Description>
+    <StrengthModifier>4</StrengthModifier>
+  </Weapon>
+  <Weapon>
+    <ItemID>W4</ItemID>
+    <Name>BFG</Name>
+    <Description>Just point and shoot.</Description>
+    <StrengthModifier>9001</StrengthModifier>
+  </Weapon>
+</Weapons>

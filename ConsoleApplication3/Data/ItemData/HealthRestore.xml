@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HealthRestoreItems>
+  <HealthRestoreItem>
+    <ItemID>HR1</ItemID>
+    <Name>Small Potion</Name>
+    <Description>Heals 5 Health</Description>
+    <RestoreAmount>5</RestoreAmount>
+  </HealthRestoreItem>
+  <HealthRestoreItem>
+    <ItemID>HR2</ItemID>
+    <Name>Large Potion</Name>
+    <Description>Heals 10 Health</Description>
+    <RestoreAmount>10</RestoreAmount>
+  </HealthRestoreItem>
+</HealthRestoreItems>
