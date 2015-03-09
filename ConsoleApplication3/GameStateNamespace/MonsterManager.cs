@@ -32,5 +32,35 @@ namespace ArenaManager.GameStateNamespace
             return XSer.Deserialize(reader);
         }
         /****FUNCTIONS****/
+        public void TestLinq()
+        {
+            //get all level 1 monsters
+            Console.WriteLine("1st Query:");
+            List<Monster> FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 1);
+            foreach(Monster m in FilteredList)
+            {
+                Console.Clear();
+                Console.WriteLine(m.Name);
+            }
+            Console.ReadKey();
+            //get all level 2 monsters
+            Console.WriteLine("2nd Query:");
+            FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 2);
+            foreach (Monster m in FilteredList)
+            {
+                Console.Clear();
+                Console.WriteLine(m.Name);
+            }
+            Console.ReadKey();
+            //get all level 1 monsters in Grass
+            Console.WriteLine("3rd Query:");
+            FilteredList = (List<Monster>)GameMonsters.Where(x => x.Level == 1&&x.Environment.ToLower()=="grass");
+            foreach (Monster m in FilteredList)
+            {
+                Console.Clear();
+                Console.WriteLine(m.Name);
+            }
+            Console.ReadKey();
+        }
     }
 }
