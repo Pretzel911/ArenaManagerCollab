@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ArenaManager.PlayerNamespace;
+using ArenaManager.MonsterNamespace;
 
 namespace ArenaManager.GameStateNamespace
 {
@@ -30,7 +31,6 @@ namespace ArenaManager.GameStateNamespace
             myMap = new Map(MapStart);
             myItemManager = new ItemManager();
             myMonsterManager = new MonsterManager();
-            myMonsterManager.TestLinq();
             ClearMenuWithMap();
             //TODO: Remove This
             myItemManager.AddItemToPlayerPouch(myPlayer, "HR1");
@@ -172,26 +172,28 @@ namespace ArenaManager.GameStateNamespace
                 rolled = roll.Next(5, 11);
             }
             Console.Clear();
-            //Console.WriteLine(rolled.ToString());
-            Monsters myMonster = new Monsters(rolled);
-            PlayerStats();
-            Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.MonsterName, myMonster.MonsterHealth);
 
-            while (myMonster.MonsterHealth > 0)
+            Monster myMonster = myMonsterManager.GetMonster("Grass", 1);
+            int MonsterHealth = myMonster.Health;//TODO: Make an actual copy of the object
+            
+            PlayerStats();
+            Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.Name, MonsterHealth);
+
+            while (MonsterHealth > 0)
             {
                 Console.Clear();
                 PlayerStats();
-                Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.MonsterName, myMonster.MonsterHealth);
+                Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.Name, MonsterHealth);
                 Console.WriteLine("type: \n\ta to attack\n\tr to run");
                 battleInput = Console.ReadLine();
                 battleInput.ToLower();
                 if (battleInput == "healmetofull")
                     HealMetoFull();
-                if (battleInput == "a")
+                else if (battleInput == "a")
                 {
                     Console.WriteLine("You Lunge Forward and attack!");
                     agilityRoll = roll.Next(1, (myPlayer.PlayerAgility + 1));
-                    if (agilityRoll <= myMonster.MonsterAgility)
+                    if (agilityRoll <= myMonster.Agility)
                     {
                         agilityRoll = roll.Next(0, 2);
                         if (agilityRoll == 1)
@@ -202,16 +204,16 @@ namespace ArenaManager.GameStateNamespace
                     if (missed != true)
                     {
                         damageRoll = roll.Next(1, myPlayer.PlayerStrength + 1);
-                        defenseRoll = roll.Next(0, myMonster.MonsterDefense);
+                        defenseRoll = roll.Next(0, myMonster.Defense);
                         damage = damageRoll - defenseRoll;
                         if (damage <= 0) { damage = 1; }
-                        myMonster.MonsterHealth = myMonster.MonsterHealth - (damage);
+                        MonsterHealth = MonsterHealth - (damage);
                         Console.WriteLine("A solid blow for {0} Damage!", damage);
                     }
                     else { Console.WriteLine("You missed spectacularily"); missed = false; }
 
                     Console.WriteLine(myMonster.AttackText);
-                    agilityRoll = roll.Next(1, myMonster.MonsterAgility + 1);
+                    agilityRoll = roll.Next(1, myMonster.Agility + 1);
                     if (agilityRoll <= myPlayer.PlayerAgility)
                     {
                         agilityRoll = roll.Next(0, 2);
@@ -221,21 +223,24 @@ namespace ArenaManager.GameStateNamespace
                         }
                         if (missed != true)
                         {
-                            damageRoll = roll.Next(1, myMonster.MonsterStrength + 1);
+                            damageRoll = roll.Next(1, myMonster.Strength + 1);
                             defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
                             damage = damageRoll - defenseRoll;
                             if (damage <= 0) { damage = 1; }
                             myPlayer.PlayerCurrentHealth = myPlayer.PlayerCurrentHealth - (damage);
                             Console.WriteLine(myMonster.HitText + " {0} Damage!", damage);
                         }
-                        else { Console.WriteLine(myMonster.MissText); missed = false; }
+                        else 
+                        { 
+                            Console.WriteLine(myMonster.MissText); missed = false; 
+                        }
                         Console.ReadKey();
-                        if (myMonster.MonsterHealth <= 0)
+                        if (MonsterHealth <= 0)
                         {
-                            myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.MonsterExperience;
-                            myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.MonsterGold;
-                            Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.MonsterExperience, myMonster.MonsterName);
-                            Console.WriteLine("You recieved {0} gold", myMonster.MonsterGold);
+                            myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
+                            myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
+                            Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
+                            Console.WriteLine("You recieved {0} gold", myMonster.Gold);
                             Console.ReadKey();
                             ClearMenuWithMap();
                         }
@@ -248,6 +253,7 @@ namespace ArenaManager.GameStateNamespace
                         }
                     }
                 }
+                Console.ReadKey();
             }
         }
         private void DisplayPouch()

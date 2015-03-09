@@ -62,5 +62,12 @@ namespace ArenaManager.GameStateNamespace
             }
             Console.ReadKey();
         }
+        public Monster GetMonster(String MapEnvironment, int MonsterLevel)
+        {
+            Random Roll = new Random();
+            var FilteredList = GameMonsters.Where(x => x.Level == MonsterLevel && x.Environment.ToLower() == MapEnvironment.ToLower());
+            int roll = Roll.Next(0, FilteredList.Count());
+            return FilteredList.ToList()[roll];
+        }
     }
 }
