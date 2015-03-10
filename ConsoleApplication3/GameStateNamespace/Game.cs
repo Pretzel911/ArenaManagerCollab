@@ -32,7 +32,7 @@ namespace ArenaManager.GameStateNamespace
             myMapManager = new MapManager();
             myItemManager = new ItemManager();
             myMonsterManager = new MonsterManager();
-            myMap = myMapManager.MoveMap(0, 0);
+            myMap = myMapManager.MoveMap(myPlayer);
             ClearMenuWithMap();
             //TODO: Remove This
             myItemManager.AddItemToPlayerPouch(myPlayer, "HR1");
@@ -110,20 +110,35 @@ namespace ArenaManager.GameStateNamespace
             movementInput = Console.ReadLine();
             if (movementInput == "n")
             {
-                myMap.MapLocationY += 1;
-                myMap = myMapManager.MoveMap(myMap.MapLocationX, myMap.MapLocationY);
+                if (myPlayer.PlayerLocationX < 2)
+                {
+                    myPlayer.PlayerLocationY += 1;
+                    myMapManager.MoveMap(myPlayer);
+                }
             }
-            else if (movementInput == "n")
+            else if (movementInput == "s")
             {
-
+                if (myPlayer.PlayerLocationY > 0)
+                {
+                    myPlayer.PlayerLocationY -= 1;
+                    myMapManager.MoveMap(myPlayer);
+                }
             }
-            else if (movementInput == "n")
+            else if (movementInput == "e")
             {
-
+                if (myPlayer.PlayerLocationX < 2)
+                {
+                    myPlayer.PlayerLocationX += 1;
+                    myMapManager.MoveMap(myPlayer);
+                }
             }
-            else if (movementInput == "n")
+            else if (movementInput == "w")
             {
-
+                if (myPlayer.PlayerLocationX > 0)
+                {
+                    myPlayer.PlayerLocationX -= 1;
+                    myMapManager.MoveMap(myPlayer);
+                }
             }
         }
         private void ClearMenuWithMap()

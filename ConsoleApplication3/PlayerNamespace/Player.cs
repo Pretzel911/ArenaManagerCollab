@@ -19,6 +19,8 @@ namespace ArenaManager.PlayerNamespace
         public int UnusedStatPoints { get; set; }
         public int PlayerGold { get; set; }
         public Pouch myPouch { get; set; }
+        public int PlayerLocationX { get; set; }
+        public int PlayerLocationY { get; set; }
 
         public Player()
         {
@@ -85,6 +87,8 @@ namespace ArenaManager.PlayerNamespace
                 PlayerGold = 0;
                 UnusedStatPoints = 0;
                 myPouch = new Pouch(this);
+                PlayerLocationX = 0;
+                PlayerLocationY = 0;
             }
             else
             {
