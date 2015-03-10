@@ -13,6 +13,14 @@
     <Environment>Grass</Environment>
     <Level>1</Level>
     <Gold>1</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
+    <Loot>
+      <DropChance>.025</DropChance>
+      <ItemID>HR2</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Angry Rabbit</Name>

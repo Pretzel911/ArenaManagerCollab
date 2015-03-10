@@ -52,6 +52,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="MapNamespace\Maps.cs" />
     <Compile Include="MonsterNamespace\Monster.cs" />
+    <Compile Include="MonsterNamespace\MonsterLoot.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="GameStateNamespace\Game.cs" />
     <Compile Include="PlayerNamespace\Player.cs" />

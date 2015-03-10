@@ -27,5 +27,7 @@ namespace ArenaManager.MonsterNamespace
         public string Environment { get; set; }
         public int Level { get; set; }
         public int Gold { get; set; }
+        [XmlElement("Loot")]
+        public List<MonsterLoot> LootList { get; set; }
     }
 }
