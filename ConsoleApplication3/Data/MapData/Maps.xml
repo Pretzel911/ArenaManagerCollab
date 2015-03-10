@@ -3,7 +3,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>0</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.\nTall buidlings are all around you,\nincluding the Battle Arena where\nwarriors go to hone their skills</LocationDescription>
+    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
     <MapEnvironment>City</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>99</WhichMenu>
@@ -19,7 +19,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood\nand here you are</LocationDescription>
+    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -27,7 +27,7 @@
   <MapItem>
     <MapLocationX>1</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the\nHavenshire sewers leads here, who knows\n what has come out of there\nWest is the Elkwood\nSouth is the Havenshire Grassland</LocationDescription>
+    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
     <MapEnvironment>Sewer</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>

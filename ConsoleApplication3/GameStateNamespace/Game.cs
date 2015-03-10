@@ -121,7 +121,8 @@ namespace ArenaManager.GameStateNamespace
                 if (myPlayer.PlayerLocationY > 0)
                 {
                     myPlayer.PlayerLocationY -= 1;
-                    myMapManager.MoveMap(myPlayer);
+                    myMap = myMapManager.MoveMap(myPlayer);
+                    
                 }
             }
             else if (movementInput == "e")
