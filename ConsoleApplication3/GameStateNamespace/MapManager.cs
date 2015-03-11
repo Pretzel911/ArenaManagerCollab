@@ -32,10 +32,31 @@ namespace ArenaManager.GameStateNamespace
             XmlReader reader = XmlReader.Create(path);
             return XSer.Deserialize(reader);
         }
-        public Maps MoveMap(Player myPlayer)
+        public void SetPlayerMap(Player myPlayer, int x, int y)
         {
-            var FilteredList = MapLocations.Where(x => x.MapLocationX == myPlayer.PlayerLocationX && x.MapLocationY == myPlayer.PlayerLocationY);
-            return FilteredList.ToList()[0];
+            var FilteredList = MapLocations.Where(m => m.MapLocationX == x
+                && m.MapLocationY == y);
+            if (FilteredList.ToList().Count != 0)
+            {
+                myPlayer.myMap = FilteredList.ToList()[0];
+            }
+            else
+            {
+                Console.WriteLine("Teleportation Failed!");
+            }
+        }
+        public void MovePlayerMap(Player myPlayer,int ChangeX, int ChangeY)
+        {
+            var FilteredList = MapLocations.Where(x => x.MapLocationX == myPlayer.myMap.MapLocationX+ChangeX 
+                && x.MapLocationY == myPlayer.myMap.MapLocationY+ChangeY);
+            if (FilteredList.ToList().Count != 0)
+            {
+                myPlayer.myMap = FilteredList.ToList()[0];
+            }
+            else
+            {
+                Console.WriteLine("You are held back by an invisible force!");
+            }
         }
     }
 }

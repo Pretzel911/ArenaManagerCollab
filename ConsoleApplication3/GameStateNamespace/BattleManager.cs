@@ -76,7 +76,7 @@ namespace ArenaManager.GameStateNamespace
         }
         private void GetBattleMonster()
         {
-            myMonster = myGame.myMonsterManager.GetMonster("Grass", 1);//TODO: Fill in location information somehow
+            myMonster = myGame.myMonsterManager.GetMonster(myPlayer.myMap.MapEnvironment, myPlayer.myMap.AreaMonsterLevel);
             MonsterHealth = myMonster.Health;
         }
 

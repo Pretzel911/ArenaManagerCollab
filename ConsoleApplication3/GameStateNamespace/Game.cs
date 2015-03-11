@@ -16,7 +16,6 @@ namespace ArenaManager.GameStateNamespace
         public MapManager myMapManager;
         public ItemManager myItemManager;
         public MonsterManager myMonsterManager;
-        MapNamespace.Maps myMap;
 
         public Game()
         {
@@ -32,7 +31,7 @@ namespace ArenaManager.GameStateNamespace
             myMapManager = new MapManager();
             myItemManager = new ItemManager();
             myMonsterManager = new MonsterManager();
-            myMap = myMapManager.MoveMap(myPlayer);
+            myMapManager.SetPlayerMap(myPlayer,0,0);
             ClearMenuWithMap();
         }
         public void StartGame()
@@ -44,38 +43,39 @@ namespace ArenaManager.GameStateNamespace
 
                 while (input != "exit")
                 {
+                    Console.WriteLine("\n\n");
+                    inputArray = Console.ReadLine().ToLower().Split(' ');
+                    input = inputArray[0];
                     #region Menu99
-                    if (myMap.WhichMenu == 99)
-                    {
-                        Console.WriteLine("\n\n");
-                        inputArray = Console.ReadLine().ToLower().Split(' ');
-                        input = inputArray[0];
+
                         //input = input.ToLower(); See Above, classy!
-                        if (input == "help")
-                            HelpMenu();
-                        else if (input == "upmonsterlevel")
-                            UpMonsterLevelMenu(monsterLevel);
-                        else if (input == "spendskill")
-                            SpendSkillsMenu();
-                        else if (input == "arena")
-                            BattleHandlerMenu(monsterLevel);
-                        else if (input == "inn")
-                            StayAtInn();
-                        else if (input == "clear")
-                            ClearMenuWithMap();
-                        else if (input == "levelup")
-                            LevelUpMenu();
-                        else if (input == "givemexp")
-                            XpCheat();
-                        else if (input == "displaypouch")
-                            DisplayPouch();
-                        else if (input == "useitem")
-                            UseItem(inputArray[1]);
-                        else if (input == "move")
-                            MoveMapRegion();
-                    }
+                    if (input == "help")
+                        HelpMenu();
+                    else if (input == "upmonsterlevel")
+                        UpMonsterLevelMenu(monsterLevel);
+                    else if (input == "spendskill")
+                        SpendSkillsMenu();
+                    else if (input == "battle" && myPlayer.myMap.MapEnvironment != "City")
+                        BattleHandlerMenu();
+                    else if (input == "arena" && myPlayer.myMap.MapEnvironment == "City")
+                        BattleHandlerMenu();
+                    else if (input == "inn" && myPlayer.myMap.MapEnvironment == "City")
+                        StayAtInn();
+                    else if (input == "clear")
+                        ClearMenuWithMap();
+                    else if (input == "levelup")
+                        LevelUpMenu();
+                    else if (input == "givemexp")
+                        XpCheat();
+                    else if (input == "displaypouch")
+                        DisplayPouch();
+                    else if (input == "useitem")
+                        UseItem(inputArray[1]);
+                    else if (input == "move")
+                        MoveMapRegion();
+                    
                     #region Menu1
-                    else if (myMap.WhichMenu == 1)
+                    /*else if (myPlayer.myMap.WhichMenu == 1)
                     {
                         Console.WriteLine("\n\n");
                         inputArray = Console.ReadLine().ToLower().Split(' ');
@@ -92,7 +92,7 @@ namespace ArenaManager.GameStateNamespace
                             UseItem(inputArray[1]);
                         else if (input == "move")
                             MoveMapRegion();
-                    }
+                    }*/
                     #endregion
                 }
             #endregion
@@ -107,37 +107,21 @@ namespace ArenaManager.GameStateNamespace
             movementInput = Console.ReadLine();
             if (movementInput == "n")
             {
-                if (myPlayer.PlayerLocationX < 2)
-                {
-                    myPlayer.PlayerLocationY += 1;
-                    myMapManager.MoveMap(myPlayer);
-                }
+                myMapManager.MovePlayerMap(myPlayer, 0, 1);
             }
             else if (movementInput == "s")
             {
-                if (myPlayer.PlayerLocationY > 0)
-                {
-                    myPlayer.PlayerLocationY -= 1;
-                    myMap = myMapManager.MoveMap(myPlayer);
-                    
-                }
+                 myMapManager.MovePlayerMap(myPlayer,0,-1);
             }
             else if (movementInput == "e")
             {
-                if (myPlayer.PlayerLocationX < 2)
-                {
-                    myPlayer.PlayerLocationX += 1;
-                    myMapManager.MoveMap(myPlayer);
-                }
+                myMapManager.MovePlayerMap(myPlayer, 1, 0);
             }
             else if (movementInput == "w")
             {
-                if (myPlayer.PlayerLocationX > 0)
-                {
-                    myPlayer.PlayerLocationX -= 1;
-                    myMapManager.MoveMap(myPlayer);
-                }
+                 myMapManager.MovePlayerMap(myPlayer, -1, 0);
             }
+            ClearMenuWithMap();
         }
         public void ClearMenuWithMap()
         {
@@ -150,12 +134,16 @@ namespace ArenaManager.GameStateNamespace
             Console.Clear();
             PlayerStats();
         }
-        private static void HelpMenu()
+        private  void HelpMenu()
         {
             Console.WriteLine("Current Commands: ");
             Console.WriteLine("Clear - Clears the screen");
+            if(myPlayer.myMap.MapEnvironment!="City")
+                Console.WriteLine("Battle- Initiates a battle in the Wild");
+            if (myPlayer.myMap.MapEnvironment == "City")
             Console.WriteLine("Arena- Initiates a battle in the Arena");
-            Console.WriteLine("Inn - Heal to full at the cost of 1 Experience per missing health");
+            if (myPlayer.myMap.MapEnvironment == "City")
+                Console.WriteLine("Inn - Heal to full at the cost of 1 Experience per missing health");
             Console.WriteLine("LevelUp - If you have enough experience, levels you up!");
             Console.WriteLine("SpendSkill - If you have unused skill points, spend them here.");
             Console.WriteLine("UpMonsterLevel - Raises the Level of monsters you will fight\t ******WARNING DANGEROUS******");
@@ -213,10 +201,18 @@ namespace ArenaManager.GameStateNamespace
             }
             else { Console.WriteLine("\tNot Enough Experience"); }
         }
-        private void BattleHandlerMenu(int monsterLevel)
+        private void BattleHandlerMenu()
         {
-            BattleManager myBattleManager = new BattleManager(this);
-            myBattleManager.RunBattle();
+            if (myPlayer.myMap.MapEnvironment != "City")//TODO: Implement Arena Logic
+            {
+                BattleManager myBattleManager = new BattleManager(this);
+                myBattleManager.RunBattle();
+            }
+            else
+            {
+                Console.WriteLine("Unfortunately the arena is closed, best be going out into the wilds if you want to fight.");
+            }
+
         }
         private void DisplayPouch()
         {
@@ -251,7 +247,7 @@ namespace ArenaManager.GameStateNamespace
         }
         public void CurrentMap()
         {
-            Console.WriteLine("\n\t{0}", myMap.LocationDescription);
+            Console.WriteLine("\n\t{0}", myPlayer.myMap.LocationDescription);
         }
         #endregion
     }
