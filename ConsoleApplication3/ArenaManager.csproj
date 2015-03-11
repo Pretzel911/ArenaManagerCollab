@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameStateNamespace\BattleManager.cs" />
     <Compile Include="GameStateNamespace\MapManager.cs" />
     <Compile Include="GameStateNamespace\ItemManager.cs" />
     <Compile Include="GameStateNamespace\MonsterManager.cs" />

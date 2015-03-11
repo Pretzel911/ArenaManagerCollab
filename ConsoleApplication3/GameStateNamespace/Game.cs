@@ -11,11 +11,11 @@ namespace ArenaManager.GameStateNamespace
     class Game
     {
 
-        Player myPlayer;
-        Random roll;
-        MapManager myMapManager;
-        ItemManager myItemManager;
-        MonsterManager myMonsterManager;
+        public Player myPlayer;
+        Random Roll;
+        public MapManager myMapManager;
+        public ItemManager myItemManager;
+        public MonsterManager myMonsterManager;
         MapNamespace.Maps myMap;
 
         public Game()
@@ -27,7 +27,7 @@ namespace ArenaManager.GameStateNamespace
         private void InitializeGame()
         {
             myPlayer = new Player();
-            roll = new Random();
+            Roll = new Random();
             //string MapStart = "start";
             myMapManager = new MapManager();
             myItemManager = new ItemManager();
@@ -142,7 +142,7 @@ namespace ArenaManager.GameStateNamespace
                 }
             }
         }
-        private void ClearMenuWithMap()
+        public void ClearMenuWithMap()
         {
             Console.Clear();
             CurrentMap();
@@ -218,105 +218,8 @@ namespace ArenaManager.GameStateNamespace
         }
         private void BattleHandlerMenu(int monsterLevel)
         {
-            int damage;
-            string battleInput;
-            int agilityRoll;
-            int damageRoll;
-            int defenseRoll;
-            int rolled = 1;
-
-            bool missed = false;
-            if (monsterLevel == 1)
-            {
-                rolled = roll.Next(1, 6);
-            }
-            if (monsterLevel == 2)
-            {
-                rolled = roll.Next(5, 11);
-            }
-            Console.Clear();
-
-            Monster myMonster = myMonsterManager.GetMonster("Grass", 1);
-            int MonsterHealth = myMonster.Health;//TODO: Make an actual copy of the object
-            
-            PlayerStats();
-            Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.Name, MonsterHealth);
-
-            while (MonsterHealth > 0)
-            {
-                Console.Clear();
-                PlayerStats();
-                Console.WriteLine("\n\tName: {0}\n\tHealth: {1}", myMonster.Name, MonsterHealth);
-                Console.WriteLine("type: \n\ta to attack\n\tr to run");
-                battleInput = Console.ReadLine();
-                battleInput.ToLower();
-                if (battleInput == "healmetofull")
-                    HealMetoFull();
-                else if (battleInput == "a")
-                {
-                    Console.WriteLine("You Lunge Forward and attack!");
-                    agilityRoll = roll.Next(1, (myPlayer.PlayerAgility + 1));
-                    if (agilityRoll <= myMonster.Agility)
-                    {
-                        agilityRoll = roll.Next(0, 2);
-                        if (agilityRoll == 1)
-                        {
-                            missed = true;
-                        }
-                    }
-                    if (missed != true)
-                    {
-                        damageRoll = roll.Next(1, myPlayer.PlayerStrength + 1);
-                        defenseRoll = roll.Next(0, myMonster.Defense);
-                        damage = damageRoll - defenseRoll;
-                        if (damage <= 0) { damage = 1; }
-                        MonsterHealth = MonsterHealth - (damage);
-                        Console.WriteLine("A solid blow for {0} Damage!", damage);
-                    }
-                    else { Console.WriteLine("You missed spectacularily"); missed = false; }
-
-                    Console.WriteLine(myMonster.AttackText);
-                    agilityRoll = roll.Next(1, myMonster.Agility + 1);
-                    if (agilityRoll <= myPlayer.PlayerAgility)
-                    {
-                        agilityRoll = roll.Next(0, 2);
-                        if (agilityRoll == 1)
-                        {
-                            missed = true;
-                        }
-                    }
-                    if (missed != true)
-                    {
-                        damageRoll = roll.Next(1, myMonster.Strength + 1);
-                        defenseRoll = roll.Next(0, myPlayer.PlayerDefense);
-                        damage = damageRoll - defenseRoll;
-                        if (damage <= 0) { damage = 1; }
-                        myPlayer.PlayerCurrentHealth = myPlayer.PlayerCurrentHealth - (damage);
-                        Console.WriteLine(myMonster.HitText + " {0} Damage!", damage);
-                    }
-                    else 
-                    { 
-                        Console.WriteLine(myMonster.MissText); missed = false; 
-                    }
-                    Console.ReadKey();
-                    if (MonsterHealth <= 0)
-                    {
-                        myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
-                        myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
-                        Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
-                        Console.WriteLine("You recieved {0} gold", myMonster.Gold);
-                        Console.ReadKey();
-                        ClearMenuWithMap();
-                    }
-                    if (myPlayer.PlayerCurrentHealth <= 0)
-                    {
-                        Console.WriteLine("The monster has defeated you!");
-                        Console.ReadKey();
-                        Environment.Exit(1);
-
-                    }
-                }
-            }
+            BattleManager myBattleManager = new BattleManager(this);
+            myBattleManager.RunBattle();
         }
         private void DisplayPouch()
         {
@@ -338,7 +241,7 @@ namespace ArenaManager.GameStateNamespace
             PlayerStats();
             Console.WriteLine("\n!!!God Damn Cheater!!!");
         }
-        private void HealMetoFull()
+        public  void HealMetoFull()
         {
             myPlayer.PlayerCurrentHealth = myPlayer.PlayerMaxHealth;
         }
