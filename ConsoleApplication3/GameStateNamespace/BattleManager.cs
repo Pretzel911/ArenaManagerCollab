@@ -44,7 +44,7 @@ namespace ArenaManager.GameStateNamespace
                 ExecutePlayerAction();
                 CheckMonsterAttack();
                 Console.ReadKey();
-                CheckBattleOver(myMonster);
+                CheckBattleOver();
             }
         }
 
@@ -138,7 +138,7 @@ namespace ArenaManager.GameStateNamespace
             }
         }
 
-        private void CheckBattleOver(Monster myMonster)
+        private void CheckBattleOver()
         {
             if (MonsterHealth <= 0)
             {
