@@ -35,6 +35,10 @@
     <Environment>Grass</Environment>
     <Level>1</Level>
     <Gold>2</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Horde Of Rats</Name>
@@ -49,6 +53,10 @@
     <Environment>Sewer</Environment>
     <Level>1</Level>
     <Gold>3</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Dire Rat</Name>
@@ -63,6 +71,10 @@
     <Environment>Sewer</Environment>
     <Level>1</Level>
     <Gold>3</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Gray Wolf</Name>
@@ -77,6 +89,10 @@
     <Environment>Forest</Environment>
     <Level>1</Level>
     <Gold>5</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Rabid Deer</Name>
@@ -91,6 +107,10 @@
     <Environment>Forest</Environment>
     <Level>1</Level>
     <Gold>4</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Armored Beetle</Name>
@@ -105,6 +125,10 @@
     <Environment>Desert</Environment>
     <Level>1</Level>
     <Gold>5</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Sand Worm</Name>
@@ -119,6 +143,10 @@
     <Environment>Desert</Environment>
     <Level>1</Level>
     <Gold>5</Gold>
+    <Loot>
+      <DropChance>.05</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>King Slime</Name>
@@ -133,6 +161,10 @@
     <Environment>Grass</Environment>
     <Level>1</Level>
     <Gold>8</Gold>
+    <Loot>
+      <DropChance>.10</DropChance>
+      <ItemID>HR1</ItemID>
+    </Loot>
   </Monster>
   <Monster>
     <Name>Bandit</Name>
@@ -147,5 +179,9 @@
     <Environment>Forest</Environment>
     <Level>2</Level>
     <Gold>40</Gold>
+    <Loot>
+      <DropChance>.10</DropChance>
+      <ItemID>W3</ItemID>
+    </Loot>
   </Monster>
 </Monsters>

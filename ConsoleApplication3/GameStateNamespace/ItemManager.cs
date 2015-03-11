@@ -49,5 +49,10 @@ namespace ArenaManager.GameStateNamespace
                 }
             }
         }
+        public Item GetItemByID(String ID)
+        {
+            var FilteredList = GameItems.Where(x => x.ItemID==ID);
+            return FilteredList.ToList()[0];
+        }
     }
 }

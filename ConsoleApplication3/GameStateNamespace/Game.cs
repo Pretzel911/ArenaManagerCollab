@@ -34,9 +34,6 @@ namespace ArenaManager.GameStateNamespace
             myMonsterManager = new MonsterManager();
             myMap = myMapManager.MoveMap(myPlayer);
             ClearMenuWithMap();
-            //TODO: Remove This
-            myItemManager.AddItemToPlayerPouch(myPlayer, "HR1");
-            myItemManager.AddItemToPlayerPouch(myPlayer, "W1");
         }
         public void StartGame()
         {

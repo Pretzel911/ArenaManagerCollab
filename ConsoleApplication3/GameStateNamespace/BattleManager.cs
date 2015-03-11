@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ArenaManager.MonsterNamespace;
 using ArenaManager.PlayerNamespace;
+using ArenaManager.ItemNamespace;
 
 namespace ArenaManager.GameStateNamespace
 {
@@ -36,7 +37,6 @@ namespace ArenaManager.GameStateNamespace
             Console.Clear();
 
             GetBattleMonster();
-
             while (MonsterHealth > 0)
             {
                 PrintBattleOpening();
@@ -76,8 +76,8 @@ namespace ArenaManager.GameStateNamespace
         }
         private void GetBattleMonster()
         {
-            myMonster = myGame.myMonsterManager.GetMonster("Grass", 1);
-            MonsterHealth = myMonster.Health;//TODO: Make an actual copy of the object
+            myMonster = myGame.myMonsterManager.GetMonster("Grass", 1);//TODO: Fill in location information somehow
+            MonsterHealth = myMonster.Health;
         }
 
         private void CheckPlayerAttack()
@@ -142,20 +142,42 @@ namespace ArenaManager.GameStateNamespace
         {
             if (MonsterHealth <= 0)
             {
-                myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
-                myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
-                Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
-                Console.WriteLine("You recieved {0} gold", myMonster.Gold);
-                Console.ReadKey();
-                myGame.ClearMenuWithMap();
+                ExecutePlayerWins();
             }
             if (myPlayer.PlayerCurrentHealth <= 0)
             {
-                Console.WriteLine("The monster has defeated you!");
-                Console.ReadKey();
-                Environment.Exit(1);
-
+                ExecutePlayerLoses();
             }
+        }
+
+        private void ExecutePlayerWins()
+        {
+            myPlayer.PlayerExperience = myPlayer.PlayerExperience + myMonster.Experience;
+            myPlayer.PlayerGold = myPlayer.PlayerGold + myMonster.Gold;
+            Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
+            Console.WriteLine("You received {0} gold", myMonster.Gold);
+            PerformLootLogic();
+            Console.ReadKey();
+            myGame.ClearMenuWithMap();
+        }
+        private void PerformLootLogic()
+        {
+            Item tempItem;
+            foreach(MonsterLoot loot in myMonster.LootList)
+            {
+                if(Roll.Next(0,1000)<loot.DropChance*1000)
+                {
+                    tempItem = myGame.myItemManager.GetItemByID(loot.ItemID);
+                    Console.WriteLine(myMonster.Name + " dropped a " + tempItem.Name + ".");
+                    myPlayer.myPouch.myItems.Add(tempItem);
+                }
+            }
+        }
+        private void ExecutePlayerLoses()
+        {
+            Console.WriteLine("The monster has defeated you!");
+            Console.ReadKey();
+            Environment.Exit(1);
         }
     }
 }
