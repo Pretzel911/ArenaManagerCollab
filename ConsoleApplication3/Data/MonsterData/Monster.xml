@@ -61,7 +61,7 @@
   <Monster>
     <Name>Dire Rat</Name>
     <Health>9</Health>
-    <Strength>8</Strength>
+    <Strength>6</Strength>
     <Defense>2</Defense>
     <Agility>3</Agility>
     <Experience>4</Experience>
