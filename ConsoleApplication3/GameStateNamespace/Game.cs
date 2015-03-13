@@ -142,9 +142,9 @@ namespace ArenaManager.GameStateNamespace
             Console.WriteLine("Current Commands: ");
             Console.WriteLine("Clear - Clears the screen");
             if(myPlayer.myMap.MapEnvironment!="City")
-                Console.WriteLine("Battle- Initiates a battle in the Wild");
+                Console.WriteLine("Battle - Initiates a battle in the Wild");
             if (myPlayer.myMap.MapEnvironment == "City")
-            Console.WriteLine("Arena- Initiates a battle in the Arena");
+            Console.WriteLine("Arena - Initiates a battle in the Arena");
             if (myPlayer.myMap.MapEnvironment == "City")
                 Console.WriteLine("Inn - Heal to full at the cost of 1 Experience per missing health");
             Console.WriteLine("LevelUp - If you have enough experience, levels you up!");
