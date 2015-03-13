@@ -22,6 +22,7 @@ namespace ArenaManager.GameStateNamespace
             GameItems = new List<Item>();
             LoadWeapons();
             LoadHealthRestore();
+            LoadBuff();
         }
         private void LoadWeapons()
         {
@@ -31,6 +32,10 @@ namespace ArenaManager.GameStateNamespace
         private void LoadHealthRestore()
         {
             GameItems.AddRange(((HealthRestoreItemsList)LoadXML(@"Data\ItemData\HealthRestore.xml", typeof(HealthRestoreItemsList))).HealthRestoreItems);
+        }
+        private void LoadBuff()
+        {
+            GameItems.AddRange(((BuffItemsList)LoadXML(@"Data\ItemData\Buff.xml", typeof(BuffItemsList))).BuffItems);
         }
         private object LoadXML(string path, Type type)
         {

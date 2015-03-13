@@ -21,6 +21,7 @@ namespace ArenaManager.PlayerNamespace
         public int PlayerGold { get; set; }
         public Pouch myPouch { get; set; }
         public Maps myMap { get; set; }
+        public List<PlayerBuff> myBuffs { get; set; }
 
         public Player()
         {
@@ -87,6 +88,7 @@ namespace ArenaManager.PlayerNamespace
                 PlayerGold = 0;
                 UnusedStatPoints = 0;
                 myPouch = new Pouch(this);
+                myBuffs = new List<PlayerBuff>();
             }
             else
             {
@@ -181,6 +183,64 @@ namespace ArenaManager.PlayerNamespace
             {
                 UnusedStatPoints = UnusedStatPoints - spendStat;
                 PlayerDefense = PlayerDefense + spendStat;
+            }
+        }
+        public void ActivateBuffs()
+        {
+            AddBuffStats();
+        }
+        public void UpdateBuffs()
+        {
+            RemoveBuffStats();
+            CheckBuffsToRemove();
+        }
+        private void AddBuffStats()
+        {
+            foreach (PlayerBuff buff in myBuffs)
+            {
+                switch (buff.StatBuffed)
+                {
+                    case Stats.Strength:
+                        PlayerStrength += buff.AmountBuffed;
+                        break;
+                    case Stats.Agility:
+                        PlayerAgility += buff.AmountBuffed;
+                        break;
+                    case Stats.Defense:
+                        PlayerDefense += buff.AmountBuffed;
+                        break;
+                }
+            }
+        }
+        private void RemoveBuffStats()
+        {
+            foreach (PlayerBuff buff in myBuffs)
+            {
+                switch (buff.StatBuffed)
+                {
+                    case Stats.Strength:
+                        PlayerStrength -= buff.AmountBuffed;
+                        break;
+                    case Stats.Agility:
+                        PlayerAgility -= buff.AmountBuffed;
+                        break;
+                    case Stats.Defense:
+                        PlayerDefense -= buff.AmountBuffed;
+                        break;
+                }
+            }
+        }
+        private void CheckBuffsToRemove()
+        {
+            for (int i = 0; i < myBuffs.Count; i++)
+            {
+                myBuffs[i].BattlesRemaining -= 1;
+                if (myBuffs[i].BattlesRemaining <= 0)
+                {
+                    Console.WriteLine("Removed Buff " + myBuffs[i].DescriptionBattle());
+                    myBuffs.RemoveAt(i);
+                    i--;
+                }
             }
         }
     }
