@@ -3,6 +3,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>0</MapLocationY>
+    <MapName>Havenshire</MapName>
     <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
     <MapEnvironment>City</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
@@ -15,27 +16,30 @@
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
+    <MapName>Havenshire Grass Lands</MapName>
   </MapItem>
   <MapItem>
     <MapLocationX>2</MapLocationX>
     <MapLocationY>0</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription>You come across a snaking river, maybe there is a bridge across further north.</LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
-    <AreaMonsterLevel>1</AreaMonsterLevel>
+    <AreaMonsterLevel>1</AreaMonsterLevel> 
     <WhichMenu>1</WhichMenu>
+    <MapName>Havenshire GrassLands Riverbed</MapName>
   </MapItem>
   <MapItem>
     <MapLocationX>3</MapLocationX>
     <MapLocationY>0</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription>You are on the east bank of the river</LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
+    <MapName></MapName>
     <WhichMenu>1</WhichMenu>
   </MapItem>
   <MapItem>
     <MapLocationX>4</MapLocationX>
     <MapLocationY>0</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -43,7 +47,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>You find yourself in the grasslands to the east of Havenshire</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -51,7 +55,7 @@
   <MapItem>
     <MapLocationX>1</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Sewer</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -59,7 +63,7 @@
   <MapItem>
     <MapLocationX>2</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -67,7 +71,7 @@
   <MapItem>
     <MapLocationX>3</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -75,7 +79,7 @@
   <MapItem>
     <MapLocationX>4</MapLocationX>
     <MapLocationY>1</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -83,7 +87,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>2</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -91,7 +95,7 @@
   <MapItem>
     <MapLocationX>1</MapLocationX>
     <MapLocationY>2</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -99,7 +103,7 @@
   <MapItem>
     <MapLocationX>2</MapLocationX>
     <MapLocationY>2</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -107,7 +111,7 @@
   <MapItem>
     <MapLocationX>3</MapLocationX>
     <MapLocationY>2</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -115,7 +119,7 @@
   <MapItem>
     <MapLocationX>4</MapLocationX>
     <MapLocationY>2</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -123,7 +127,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>3</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -131,7 +135,7 @@
   <MapItem>
     <MapLocationX>1</MapLocationX>
     <MapLocationY>3</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -139,7 +143,7 @@
   <MapItem>
     <MapLocationX>2</MapLocationX>
     <MapLocationY>3</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -147,7 +151,7 @@
   <MapItem>
     <MapLocationX>3</MapLocationX>
     <MapLocationY>3</MapLocationY>
-    <LocationDescription>You find yourself in the grasslands to the east of Havenshire</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -155,7 +159,7 @@
   <MapItem>
     <MapLocationX>4</MapLocationX>
     <MapLocationY>3</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -163,7 +167,7 @@
   <MapItem>
     <MapLocationX>0</MapLocationX>
     <MapLocationY>4</MapLocationY>
-    <LocationDescription>Here you find a river, it looks like a pipe from the&#xA;&#9;Havenshire sewers leads here, who knows&#xA;&#9;what has come out of there&#xA;&#9;West is the Elkwood&#xA;&#9;South is the Havenshire Grassland</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Forest</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -171,7 +175,7 @@
   <MapItem>
     <MapLocationX>1</MapLocationX>
     <MapLocationY>4</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Grass</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -179,7 +183,7 @@
   <MapItem>
     <MapLocationX>2</MapLocationX>
     <MapLocationY>4</MapLocationY>
-    <LocationDescription>You are inside the city of Havenshire.&#xA;&#9;Tall buidlings are all around you,&#xA;&#9;including the Battle Arena where&#xA;&#9;warriors go to hone their skills</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>0</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -187,7 +191,7 @@
   <MapItem>
     <MapLocationX>3</MapLocationX>
     <MapLocationY>4</MapLocationY>
-    <LocationDescription>You find yourself in the grasslands to the east of Havenshire</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
@@ -195,7 +199,7 @@
   <MapItem>
     <MapLocationX>4</MapLocationX>
     <MapLocationY>4</MapLocationY>
-    <LocationDescription>The forest North of Havenshire is called Elkwood&#xA;&#9;and here you are</LocationDescription>
+    <LocationDescription></LocationDescription>
     <MapEnvironment>Desert</MapEnvironment>
     <AreaMonsterLevel>1</AreaMonsterLevel>
     <WhichMenu>1</WhichMenu>
