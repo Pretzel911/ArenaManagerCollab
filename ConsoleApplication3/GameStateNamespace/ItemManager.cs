@@ -21,6 +21,7 @@ namespace ArenaManager.GameStateNamespace
         {
             GameItems = new List<Item>();
             LoadWeapons();
+            LoadArmors();
             LoadHealthRestore();
             LoadBuff();
         }
@@ -28,6 +29,11 @@ namespace ArenaManager.GameStateNamespace
         {
             //NOTE: This is a thing of beauty
             GameItems.AddRange(((WeaponsList)LoadXML(@"Data\ItemData\Weapon.xml", typeof(WeaponsList))).Weapons);
+        }
+        private void LoadArmors()
+        {
+            //NOTE: This is a thing of beauty
+            GameItems.AddRange(((ArmorsList)LoadXML(@"Data\ItemData\Armor.xml", typeof(ArmorsList))).Armors);
         }
         private void LoadHealthRestore()
         {

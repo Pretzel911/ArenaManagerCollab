@@ -22,6 +22,7 @@ namespace ArenaManager.PlayerNamespace
         public Pouch myPouch { get; set; }
         public Maps myMap { get; set; }
         public List<PlayerBuff> myBuffs { get; set; }
+        public Equipment myEquipment { get; set; }
 
         public Player()
         {
@@ -88,6 +89,7 @@ namespace ArenaManager.PlayerNamespace
                 PlayerGold = 0;
                 UnusedStatPoints = 0;
                 myPouch = new Pouch(this);
+                myEquipment = new Equipment(this);
                 myBuffs = new List<PlayerBuff>();
             }
             else
@@ -200,13 +202,13 @@ namespace ArenaManager.PlayerNamespace
             {
                 switch (buff.StatBuffed)
                 {
-                    case Stats.Strength:
+                    case StatsEnum.Strength:
                         PlayerStrength += buff.AmountBuffed;
                         break;
-                    case Stats.Agility:
+                    case StatsEnum.Agility:
                         PlayerAgility += buff.AmountBuffed;
                         break;
-                    case Stats.Defense:
+                    case StatsEnum.Defense:
                         PlayerDefense += buff.AmountBuffed;
                         break;
                 }
@@ -218,13 +220,13 @@ namespace ArenaManager.PlayerNamespace
             {
                 switch (buff.StatBuffed)
                 {
-                    case Stats.Strength:
+                    case StatsEnum.Strength:
                         PlayerStrength -= buff.AmountBuffed;
                         break;
-                    case Stats.Agility:
+                    case StatsEnum.Agility:
                         PlayerAgility -= buff.AmountBuffed;
                         break;
-                    case Stats.Defense:
+                    case StatsEnum.Defense:
                         PlayerDefense -= buff.AmountBuffed;
                         break;
                 }

@@ -51,6 +51,7 @@
     <Compile Include="GameStateNamespace\MapManager.cs" />
     <Compile Include="GameStateNamespace\ItemManager.cs" />
     <Compile Include="GameStateNamespace\MonsterManager.cs" />
+    <Compile Include="ItemNamespace\Armor.cs" />
     <Compile Include="ItemNamespace\BuffItem.cs" />
     <Compile Include="ItemNamespace\HealthRestoreItem.cs" />
     <Compile Include="ItemNamespace\IConsumable.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="MonsterNamespace\MonsterLoot.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="GameStateNamespace\Game.cs" />
+    <Compile Include="PlayerNamespace\Equipment.cs" />
     <Compile Include="PlayerNamespace\Player.cs" />
     <Compile Include="PlayerNamespace\PlayerBuff.cs" />
     <Compile Include="PlayerNamespace\PlayerEnumerations.cs" />
@@ -78,6 +80,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\ItemData\HealthRestore.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ItemData\Armor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\ItemData\Weapon.xml">

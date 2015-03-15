@@ -33,6 +33,8 @@ namespace ArenaManager.GameStateNamespace
             myMonsterManager = new MonsterManager();
             myMapManager.SetPlayerMap(myPlayer,0,0);
             myItemManager.AddItemToPlayerPouch(myPlayer, "B2");
+            myItemManager.AddItemToPlayerPouch(myPlayer, "W1");
+            myItemManager.AddItemToPlayerPouch(myPlayer, "AB1");
             ClearMenuWithMap();
         }
         public void StartGame()
@@ -72,6 +74,10 @@ namespace ArenaManager.GameStateNamespace
                         ShowPouch();
                     else if (input == "useitem")
                         UseItem(inputArray[1]);
+                    else if (input == "showequipment")
+                        ShowEquipment();
+                    else if (input == "equipitem")
+                        EquipItem(inputArray[1]);
                     else if (input == "move")
                         MoveMapRegion();
                     else if (input == "showbuffs")
@@ -152,6 +158,8 @@ namespace ArenaManager.GameStateNamespace
             Console.WriteLine("UpMonsterLevel - Raises the Level of monsters you will fight\t ******WARNING DANGEROUS******");
             Console.WriteLine("ShowPouch - Shows the contents of your pouch");
             Console.WriteLine("UseItem <PouchSlot> - Uses item in pouch slot (Example: \"UseItem 1\")");
+            Console.WriteLine("EquipItem <PouchSlot> - Equips item in pouch slot (Example: \"EquipItem 1\")");
+            Console.WriteLine("ShowEquipment - Shows currently equipped equipment");
             Console.WriteLine("ShowBuffs - Displays the current buffs on the player");
         }
         private void UpMonsterLevelMenu(int monsterLevel)
@@ -225,6 +233,14 @@ namespace ArenaManager.GameStateNamespace
         private void UseItem(string itemSlot)
         {
             myPlayer.myPouch.UseItem(Convert.ToInt32(itemSlot));
+        }
+        private void ShowEquipment()
+        {
+            myPlayer.myEquipment.DisplayEquipment();
+        }
+        private void EquipItem(string itemSlot)
+        {
+            myPlayer.myPouch.EquipItem(Convert.ToInt32(itemSlot));
         }
         private void ShowBuffs()
         {

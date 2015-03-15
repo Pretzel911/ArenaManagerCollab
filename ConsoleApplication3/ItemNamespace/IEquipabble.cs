@@ -7,7 +7,7 @@ using ArenaManager.PlayerNamespace;
 
 namespace ArenaManager.ItemNamespace
 {
-    interface IEquippable
+    public interface IEquippable
     {
         void Equip(Player myPlayer);
         void UnEquip(Player myPlayer);

@@ -8,7 +8,7 @@ namespace ArenaManager.PlayerNamespace
 {
     public class PlayerBuff
     {
-        public Stats StatBuffed { get; set; }
+        public StatsEnum StatBuffed { get; set; }
         public int AmountBuffed { get; set; }
         public int BattlesRemaining { get; set; }
 

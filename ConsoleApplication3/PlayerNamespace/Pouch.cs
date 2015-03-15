@@ -44,7 +44,19 @@ namespace ArenaManager.PlayerNamespace
             {
                 Console.WriteLine("Item is not consumable");
             }
-            
+        }
+        public void EquipItem(int Slot)
+        {
+            IEquippable item = myItems[Slot - 1] as IEquippable;
+            if (item != null)
+            {
+                myPlayer.myEquipment.EquipItem(item);
+                myItems.RemoveAt(Slot - 1);
+            }
+            else
+            {
+                Console.WriteLine("Item is not consumable");
+            }
         }
     }
 }

@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace ArenaManager.PlayerNamespace
 {
-    public enum Stats { MaxHealth, Strength, Agility, Defense }
+    public enum StatsEnum { MaxHealth, Strength, Agility, Defense }
+    public enum ArmorEnum { Head, Legs, Arms, Body, Feet}
 }

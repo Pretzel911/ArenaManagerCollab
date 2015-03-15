@@ -16,7 +16,7 @@ namespace ArenaManager.ItemNamespace
     }
     public class BuffItem : Item, IConsumable
     {
-        public Stats BuffStat { get; set; }
+        public StatsEnum BuffStat { get; set; }
         public int BuffAmount { get; set; }
         public int Turns { get; set; }
 
