@@ -22,5 +22,6 @@ namespace ArenaManager.MapNamespace
         public int WhichMenu { get; set; } //What menu will the player be using for this location//Menu 99 for starting city only
         public int AreaMonsterLevel { get; set; } //The monster level of the the location to determine which monsters can be rolled here//TODO add property to monsters for the monsters level
         public string MapEnvironment { get; set; } //Quick environment description EG: City, Grassland, Wasteland, Desert, Forest // Will be used to determine the type of monsters that spawn here//TODO implement a monsters property for where they live                                                                                                    //TODO Monster tables by Monsterlevel and EnvironmentInhabited
+        public string MapName { get; set; } //name of map location
     }
 }

@@ -12,6 +12,7 @@ namespace ArenaManager.ItemNamespace
         public String ItemID { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }
+        public int Cost { get; set; }
 
         public virtual String PrintableDescription()
         {

@@ -37,6 +37,7 @@ namespace ArenaManager.GameStateNamespace
             Console.Clear();
 
             GetBattleMonster();
+            myPlayer.ActivateBuffs();
             while (MonsterHealth > 0)
             {
                 PrintBattleOpening();
@@ -157,6 +158,7 @@ namespace ArenaManager.GameStateNamespace
             Console.WriteLine("You defeated {1}!\nYou gained {0} Experience", myMonster.Experience, myMonster.Name);
             Console.WriteLine("You received {0} gold", myMonster.Gold);
             PerformLootLogic();
+            myPlayer.UpdateBuffs();
             Console.ReadKey();
             myGame.ClearMenuWithMap();
         }

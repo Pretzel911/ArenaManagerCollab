@@ -3,6 +3,7 @@
   <HealthRestoreItem>
     <ItemID>HR1</ItemID>
     <Name>Small Potion</Name>
+    <Cost>50</Cost>
     <Description>Heals 5 Health</Description>
     <RestoreAmount>5</RestoreAmount>
   </HealthRestoreItem>
@@ -10,6 +11,7 @@
     <ItemID>HR2</ItemID>
     <Name>Large Potion</Name>
     <Description>Heals 10 Health</Description>
+    <Cost>100</Cost>
     <RestoreAmount>10</RestoreAmount>
   </HealthRestoreItem>
 </HealthRestoreItems>

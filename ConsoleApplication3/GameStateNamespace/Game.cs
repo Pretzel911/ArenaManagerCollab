@@ -32,6 +32,9 @@ namespace ArenaManager.GameStateNamespace
             myItemManager = new ItemManager();
             myMonsterManager = new MonsterManager();
             myMapManager.SetPlayerMap(myPlayer,0,0);
+            myItemManager.AddItemToPlayerPouch(myPlayer, "B2");
+            myItemManager.AddItemToPlayerPouch(myPlayer, "W1");
+            myItemManager.AddItemToPlayerPouch(myPlayer, "AB1");
             ClearMenuWithMap();
         }
         public void StartGame()
@@ -67,12 +70,18 @@ namespace ArenaManager.GameStateNamespace
                         LevelUpMenu();
                     else if (input == "givemexp")
                         XpCheat();
-                    else if (input == "displaypouch")
-                        DisplayPouch();
+                    else if (input == "showpouch")
+                        ShowPouch();
                     else if (input == "useitem")
                         UseItem(inputArray[1]);
+                    else if (input == "showequipment")
+                        ShowEquipment();
+                    else if (input == "equipitem")
+                        EquipItem(inputArray[1]);
                     else if (input == "move")
                         MoveMapRegion();
+                    else if (input == "showbuffs")
+                        ShowBuffs();
                     
                     #region Menu1
                     /*else if (myPlayer.myMap.WhichMenu == 1)
@@ -139,16 +148,19 @@ namespace ArenaManager.GameStateNamespace
             Console.WriteLine("Current Commands: ");
             Console.WriteLine("Clear - Clears the screen");
             if(myPlayer.myMap.MapEnvironment!="City")
-                Console.WriteLine("Battle- Initiates a battle in the Wild");
+                Console.WriteLine("Battle - Initiates a battle in the Wild");
             if (myPlayer.myMap.MapEnvironment == "City")
-            Console.WriteLine("Arena- Initiates a battle in the Arena");
+            Console.WriteLine("Arena - Initiates a battle in the Arena");
             if (myPlayer.myMap.MapEnvironment == "City")
                 Console.WriteLine("Inn - Heal to full at the cost of 1 Experience per missing health");
             Console.WriteLine("LevelUp - If you have enough experience, levels you up!");
             Console.WriteLine("SpendSkill - If you have unused skill points, spend them here.");
             Console.WriteLine("UpMonsterLevel - Raises the Level of monsters you will fight\t ******WARNING DANGEROUS******");
-            Console.WriteLine("DisplayPouch - Shows the contents of your pouch");
+            Console.WriteLine("ShowPouch - Shows the contents of your pouch");
             Console.WriteLine("UseItem <PouchSlot> - Uses item in pouch slot (Example: \"UseItem 1\")");
+            Console.WriteLine("EquipItem <PouchSlot> - Equips item in pouch slot (Example: \"EquipItem 1\")");
+            Console.WriteLine("ShowEquipment - Shows currently equipped equipment");
+            Console.WriteLine("ShowBuffs - Displays the current buffs on the player");
         }
         private void UpMonsterLevelMenu(int monsterLevel)
         {
@@ -214,13 +226,36 @@ namespace ArenaManager.GameStateNamespace
             }
 
         }
-        private void DisplayPouch()
+        private void ShowPouch()
         {
             myPlayer.myPouch.DisplayPouch();
         }
         private void UseItem(string itemSlot)
         {
             myPlayer.myPouch.UseItem(Convert.ToInt32(itemSlot));
+        }
+        private void ShowEquipment()
+        {
+            myPlayer.myEquipment.DisplayEquipment();
+        }
+        private void EquipItem(string itemSlot)
+        {
+            myPlayer.myPouch.EquipItem(Convert.ToInt32(itemSlot));
+        }
+        private void ShowBuffs()
+        {
+            if (myPlayer.myBuffs.Count != 0)
+            {
+                Console.WriteLine("Buffs:");
+                foreach (PlayerBuff buff in myPlayer.myBuffs)
+                {
+                    Console.WriteLine(buff.DescriptionMain());
+                }
+            }
+            else
+            {
+                Console.WriteLine("**No Buffs**");
+            }
         }
 
 

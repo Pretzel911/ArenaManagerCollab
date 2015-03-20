@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BuffItems>
+  <BuffItem>
+    <ItemID>B1</ItemID>
+    <Name>Strength Potion</Name>
+    <Description>+10 strength in next 3 battles</Description>
+    <Cost>150</Cost>
+    <BuffStat>Strength</BuffStat>
+    <BuffAmount>10</BuffAmount>
+    <Turns>3</Turns>
+  </BuffItem>
+  <BuffItem>
+    <ItemID>B2</ItemID>
+    <Name>Agility Potion</Name>
+    <Description>+10 agility in next 3 battles</Description>
+    <Cost>150</Cost>
+    <BuffStat>Agility</BuffStat>
+    <BuffAmount>10</BuffAmount>
+    <Turns>3</Turns>
+  </BuffItem>
+  <BuffItem>
+    <ItemID>B3</ItemID>
+    <Name>Defense Potion</Name>
+    <Description>+10 defense in next 3 battles</Description>
+    <Cost>150</Cost>
+    <BuffStat>Defense</BuffStat>
+    <BuffAmount>10</BuffAmount>
+    <Turns>3</Turns>
+  </BuffItem>
+</BuffItems>

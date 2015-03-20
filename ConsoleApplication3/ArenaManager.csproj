@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CityNamespace\Armory.cs" />
+    <Compile Include="CityNamespace\CityBuilder.cs" />
+    <Compile Include="CityNamespace\Inn.cs" />
+    <Compile Include="CityNamespace\RecruitmentCenter.cs" />
     <Compile Include="GameStateNamespace\BattleManager.cs" />
     <Compile Include="GameStateNamespace\MapManager.cs" />
     <Compile Include="GameStateNamespace\ItemManager.cs" />
     <Compile Include="GameStateNamespace\MonsterManager.cs" />
+    <Compile Include="ItemNamespace\Armor.cs" />
+    <Compile Include="ItemNamespace\BuffItem.cs" />
     <Compile Include="ItemNamespace\HealthRestoreItem.cs" />
     <Compile Include="ItemNamespace\IConsumable.cs" />
     <Compile Include="ItemNamespace\IEquipabble.cs" />
@@ -56,7 +64,10 @@
     <Compile Include="MonsterNamespace\MonsterLoot.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="GameStateNamespace\Game.cs" />
+    <Compile Include="PlayerNamespace\Equipment.cs" />
     <Compile Include="PlayerNamespace\Player.cs" />
+    <Compile Include="PlayerNamespace\PlayerBuff.cs" />
+    <Compile Include="PlayerNamespace\PlayerEnumerations.cs" />
     <Compile Include="PlayerNamespace\Pouch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,7 +76,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\ItemData\Buff.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\ItemData\HealthRestore.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ItemData\Armor.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\ItemData\Weapon.xml">

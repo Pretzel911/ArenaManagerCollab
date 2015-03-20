@@ -8,24 +8,25 @@ using System.Xml.Serialization;
 
 namespace ArenaManager.ItemNamespace
 {
-    [XmlRoot("Weapons")]
-    public class WeaponsList
+    [XmlRoot("Armors")]
+    public class ArmorsList
     {
-        [XmlElement("Weapon")]
-        public List<Weapon> Weapons { get; set; }
+        [XmlElement("Armor")]
+        public List<Armor> Armors { get; set; }
     }
-    public class Weapon : Item, IEquippable
+    public class Armor : Item, IEquippable
     {
-        public int StrengthModifier { get; set; }
+        public ArmorEnum ArmorType { get; set; }
+        public int DefenseModifier { get; set; }
 
         public void Equip(Player myPlayer)
         {
-            myPlayer.PlayerStrength += StrengthModifier;
+            myPlayer.PlayerDefense += DefenseModifier;
             Console.WriteLine("Player equipped " + Name + ".");
         }
         public void UnEquip(Player myPlayer)
         {
-            myPlayer.PlayerStrength -= StrengthModifier;
+            myPlayer.PlayerDefense -= DefenseModifier;
         }
     }
 }

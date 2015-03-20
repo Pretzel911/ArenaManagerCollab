@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Armors>
+  <Armor>
+    <ItemID>AH1</ItemID>
+    <Name>Leather Cap</Name>
+    <Cost>100</Cost>
+    <Description>+1 Defense. Scalpy!</Description>
+    <ArmorType>Head</ArmorType>
+    <DefenseModifier>1</DefenseModifier>
+  </Armor>
+  <Armor>
+    <ItemID>AB1</ItemID>
+    <Name>Leather Body Armor</Name>
+    <Cost>200</Cost>
+    <Description>+2 Defense. Beefy!</Description>
+    <ArmorType>Body</ArmorType>
+    <DefenseModifier>2</DefenseModifier>
+  </Armor>
+  <Armor>
+    <ItemID>AA1</ItemID>
+    <Name>Leather Gloves</Name>
+    <Cost>100</Cost>
+    <Description>+1 Defense. Llama-y!</Description>
+    <ArmorType>Arms</ArmorType>
+    <DefenseModifier>1</DefenseModifier>
+  </Armor>
+  <Armor>
+    <ItemID>AL1</ItemID>
+    <Name>Leather Greaves</Name>
+    <Cost>200</Cost>
+    <Description>+2 Defense. Muttony!</Description>
+    <ArmorType>Legs</ArmorType>
+    <DefenseModifier>1</DefenseModifier>
+  </Armor>
+  <Armor>
+    <ItemID>AF1</ItemID>
+    <Name>Leather Boots</Name>
+    <Cost>100</Cost>
+    <Description>+1 Defense. Porky!</Description>
+    <ArmorType>Feet</ArmorType>
+    <DefenseModifier>1</DefenseModifier>
+  </Armor>
+</Armors>
